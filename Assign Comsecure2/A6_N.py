@@ -2,8 +2,7 @@
 from Crypto.Hash import MD5
 from Crypto.PublicKey import RSA
 from Crypto import Random
-from Crypto.Signature import pkcs1_15
-from Crypto.Hash import SHA256
+
 import time
 
 prevTime = 0
@@ -29,12 +28,9 @@ def signning(file_name,key):
 		buf = afile.read(BLOCKSIZE)
 		while len(buf) > 0:
 			rng = Random.new().read
-			#hash = MD5.new(str(buf).encode()).digest()
-			hash = SHA256.new(buf)
+			hash = MD5.new(str(buf).encode()).digest()
 			#cipher_text = cipher.encrypt(str(buf).encode())
-			#signature = key.sign(hash,rng)
-			signature = pkcs1_15.new(key).sign(hash)
-
+			signature = key.sign(hash,rng)
 			buf = afile.read(BLOCKSIZE)
 
 private_key2048,public_key2048,key2048 = generate_RSA(2048)

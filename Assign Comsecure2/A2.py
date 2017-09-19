@@ -16,50 +16,50 @@ def timeStop():
 	return diffTime
 
 temp = timeStop()
-hasher = hashlib.sha1()
+hasher = hashlib.sha512()
 with open('out1G.txt', 'rb') as afile:
     buf = afile.read(BLOCKSIZE)
     while len(buf) > 0:
         hasher.update(buf)
         buf = afile.read(BLOCKSIZE)
-print("Hash file 1 GB(sha1)\t\t: " + str(hasher.hexdigest()))
-print("TimeStop file 1 GB(sha1)\t: " + str(timeStop()) + " sec\n")
+print("Hash file 1 GB(sha512)\t\t: " + str(hasher.hexdigest()))
+print("TimeStop file 1 GB(sha512)\t: " + str(timeStop()) + " sec\n")
 
 #/////////////////////////////////////////////////
 
 temp = timeStop()
-hasher = hashlib.sha1()
+hasher = hashlib.sha512()
 with open('out2G.txt', 'rb') as afile:
     buf = afile.read(BLOCKSIZE)
     while len(buf) > 0:
         hasher.update(buf)
         buf = afile.read(BLOCKSIZE)
-print("Hash file 2 GB(sha1)\t\t: " + str(hasher.hexdigest()))
-print("Time Stop file 2 GB(sha1)\t: " + str(timeStop()) + " sec\n")
+print("Hash file 2 GB(sha512)\t\t: " + str(hasher.hexdigest()))
+print("Time Stop file 2 GB(sha512)\t: " + str(timeStop()) + " sec\n")
 
 #/////////////////////////////////////////////////
 
 temp = timeStop()
-hasher = hashlib.sha1()
+hasher = hashlib.sha512()
 with open('out3G.txt', 'rb') as afile:
     buf = afile.read(BLOCKSIZE)
     while len(buf) > 0:
         hasher.update(buf)
         buf = afile.read(BLOCKSIZE)
-print("Hash file 3 GB(sha1)\t\t: " + str(hasher.hexdigest()))
-print("Time Stop file 3 GB(sha1)\t: " + str(timeStop()) + " sec\n")
+print("Hash file 3 GB(sha512)\t\t: " + str(hasher.hexdigest()))
+print("Time Stop file 3 GB(sha512)\t: " + str(timeStop()) + " sec\n")
 
 #/////////////////////////////////////////////////
 
 temp = timeStop()
-hasher = hashlib.sha1()
+hasher = hashlib.sha512()
 with open('out4G.txt', 'rb') as afile:
     buf = afile.read(BLOCKSIZE)
     while len(buf) > 0:
         hasher.update(buf)
         buf = afile.read(BLOCKSIZE)
-print("Hash file 4 GB(sha1)\t\t: " + str(hasher.hexdigest()))
-print("Time Stop file 4 GB(sha1)\t: " + str(timeStop()) + " sec\n")
+print("Hash file 4 GB(sha512)\t\t: " + str(hasher.hexdigest()))
+print("Time Stop file 4 GB(sha512)\t: " + str(timeStop()) + " sec\n")
 
 #/////////////////////////////////////////////////
 

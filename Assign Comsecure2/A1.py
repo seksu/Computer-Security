@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-SIZE_OF_RANDOM = 10000
+SIZE_OF_RANDOM = 10000000
 
 averageRand  = 0
 averageHash  = 0
@@ -38,8 +38,10 @@ for x in range(SIZE_OF_RANDOM):
 
 plt.subplot(311)
 #plt.plot(varRand[:])
-y = np.arange(SIZE_OF_RANDOM)
-plt.scatter(varRand[:],y,s=0.25)
+xx = np.arange(SIZE_OF_RANDOM)
+plt.hist(varRand[:])
+
+#plt.scatter(xx,varRand[0:SIZE_OF_RANDOM],s=0.25)
 
 #///////////////////// Hash sha512 //////////////////////
 
@@ -53,9 +55,11 @@ for x in range(SIZE_OF_RANDOM):
 	fhash.write(str(varHash[x]) + '\n')
 	print(varHash[x])
 
+
 plt.subplot(312)
 #plt.plot(varHash[:])
-plt.scatter(varHash[:],y,s=0.25)
+plt.hist(varHash[:])
+#plt.scatter(xx,varHash[0:SIZE_OF_RANDOM],s=0.25)
 #plt.show()
 
 #//////////////////// Hash md5 /////////////
@@ -72,7 +76,8 @@ for x in range(SIZE_OF_RANDOM):
 
 plt.subplot(313)
 #plt.plot(varHash2[:])
-plt.scatter(varHash2[:],y,s=0.25)
+plt.hist(varHash2[:])
+#plt.scatter(xx,varHash2[0:SIZE_OF_RANDOM],s=0.25)
 
 
 #////////////////// sumary /////////////////

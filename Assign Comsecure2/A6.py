@@ -21,7 +21,11 @@ def signning(key,file_name):
 			buf += afile.read(BLOCKSIZE)
 
 # Generate a new random signing key
-signing_key = nacl.signing.SigningKey.generate()
+#signing_key = nacl.signing.SigningKey.generate()
+signing_key = nacl.signing.SigningKey(nacl.utils.random(32))
+
+
+print(type(signing_key))
 
 # Sign a message with the signing key
 signed = signing_key.sign(b"Attack at Dawn")
@@ -32,6 +36,9 @@ verify_key = signing_key.verify_key
 # Serialize the verify key to send it to a third party
 verify_key_hex = verify_key.encode(encoder=nacl.encoding.HexEncoder)
 
+
+
+'''
 #print(verify_key.verify(signed))
 temp = timeStop()
 #signed = signing_key.sign(open('out1G.txt', 'rb').read())
@@ -50,3 +57,4 @@ print("timeStop to sign file 3 GB is : " + str(timeStop()))
 temp = timeStop()
 signed = signing_key.sign(open('out4G.txt', 'rb').read())
 print("timeStop to sign file 4 GB is : " + str(timeStop()))
+'''
